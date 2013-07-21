@@ -74,3 +74,6 @@ pickle-email-*.html
 **.swp
 
 /public/uploders/*
+
+# Ignore application configuration
+/config/application.yml

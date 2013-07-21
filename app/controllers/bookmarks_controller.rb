@@ -23,7 +23,12 @@ class BookmarksController < ApplicationController
   def create
     @bookmark = Bookmark.new(bookmark_params)
     @bookmark.save
-    render nothing: true
+
+    respond_to do |format|
+
+      format.html { redirect_to bookmarks_path }
+      format.json { render nothing: true }
+    end
   end
 
   def update
