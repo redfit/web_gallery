@@ -1,0 +1,9 @@
+<li class="pick" data-id="<%= color.id %>" data-x="<%= color.x %>" data-y="<%= color.y %>"
+  data-title="Color" data-content="<%= "#{color.format_by :rgba}<br/>#{color.format_by :hsl}" %>">
+  <%= content_tag(:div, "", class: "color-pallet",style: "background-color:#{color.format_by :rgba}") %>
+  <%= content_tag :div, "(#{color.format_by :html})", class: "color-text" %>
+
+  <%= link_to bookmark_color_path(@bookmark, color), method: :delete, remote: true do %>
+    <i class="icon-remove pull-left"></i>
+  <% end %>
+</li>

@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="span7">
+    <div class="text-center">
+      <canvas id="picker" width="640" height="480" data-url="<%= @bookmark.screenshot.url %>" data-intro="範囲内の欲しい色をクリック！" data-position="bottom">
+      </canvas>
+      <p>使い方がわからないかたはこちら <button id="help" class="btn btn-info">help</button></p>
+    </div>
+  </div>
+  <div class="span4 well" data-intro="* 選択した色とコードを表示<br/>* 色クリックで他コード表示<br/>* ×で削除" data-position="bottom">
+    <h4>パレット</h4><hr/>
+    <ul id="pick-list">
+      <%= render partial: "color", collection: @bookmark.colors %>
+    </ul>
+  </div>
+</div>

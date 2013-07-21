@@ -1,3 +1,6 @@
 WebGallery::Application.routes.draw do
-  root :to => "home#index"
+  resources :bookmarks do
+    resources 'colors', only: [:index, :create, :destroy]
+  end
+  root to: "bookmarks#index"
 end

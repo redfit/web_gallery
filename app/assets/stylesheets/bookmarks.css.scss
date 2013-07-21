@@ -1,0 +1,27 @@
+// Place all the styles related to the bookmarks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.thumbnail a.tag {
+  margin: 0 5px 5px 0
+}
+
+.bookmark-list {
+  margin-left: 30px;
+}
+
+table td.screenshot {
+  text-align: center;
+}
+
+div.modal-body input[type=text] {
+  width: 400px;
+}
+
+.control-group {
+  .input-prepend {
+    .add-on {
+      width: 100px;
+    }
+  }
+}

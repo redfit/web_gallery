@@ -1,0 +1,37 @@
+// Place all the styles related to the colors controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "compass/css3";
+@import "zurui-sass";
+
+canvas{
+  @include zurui-box-emboss(.1, .2, .7);
+}
+
+#pick-list{
+  list-style: none;
+  font-family: "Osaka-Mono", "ＭＳ　ゴシック";
+
+  .pick{
+    div{
+      float: left;
+      margin: 0 5px 5px 0;
+    }
+    .color-pallet{
+      height: 24px;
+      width: 24px;
+      @include zurui-box-emboss(.1, .2, .4);
+    }
+    .color-text{
+      width: 80px;
+    }
+    .icon-remove{
+      margin-right: 10px;
+    }
+  }
+  .pick:nth-of-type(2n-1){
+    clear:both;
+  }
+}
+

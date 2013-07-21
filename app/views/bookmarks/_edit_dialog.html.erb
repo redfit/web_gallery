@@ -1,0 +1,26 @@
+<%= form_tag("", remote: true, method: :put, id: "form", autocomplete: "off", class: "form-horizontal") do |f| %>
+  <div id="edit-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="myModalLabel">Bookmark編集</h3>
+    </div>
+    <div class="modal-body">
+      <div class="control-group">
+        <div class="input-prepend">
+          <span class="add-on">Title</span>
+          <%= text_field_tag "bookmark[title]", "" %>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="input-prepend">
+          <span class="add-on">Tags</span>
+          <%= text_field_tag "bookmark[tag_list]", "", placeholder: "カンマ区切りで入力" %>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      <button id="submit-dialog" class="btn btn-primary">Update</button>
+    </div>
+  </div>
+<% end %>
