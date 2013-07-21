@@ -17,6 +17,7 @@ ready = ->
 
   # Imageオブジェクトを生成
   img = new Image()
+  img.crossOrigin = 'anonymous'
   img.src = $(canvas).data("url")
   img.onload = ->
 
