@@ -37,8 +37,8 @@ ready = ->
         url: location.href
         data:
           color:
-            x: evt.clientX
-            y: evt.clientY
+            x: mouseX
+            y: mouseY
             red: r
             green: g
             blue: b
@@ -52,11 +52,11 @@ ready = ->
     $(@).parents("li.pick").fadeOut  ->
       $(@).remove()
   ).on("click", ".pick",  ->
-    offset = $("#picker").position()
+    offset = $("canvas").position()
     x = parseInt($(@).data("x"), 10) - 14
     y = parseInt($(@).data("y"), 10) - 7 # icon 14px
     icon = $("<i/>").addClass("icon-hand-right").css("position","absolute")
-      .css("top","#{y}px").css("left","#{x}px").css("margin", "0").css("padding", "0")
+      .css("top","#{y+offset.top}px").css("left","#{x+offset.left}px").css("margin", "0").css("padding", "0")
     $(".icon-hand-right").remove()
     icon.appendTo($("#picker").parent())
     icon.effect("bounce", { direction: 'left', distance: 30, times: 5 }, 500)
