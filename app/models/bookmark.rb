@@ -7,7 +7,7 @@ class Bookmark < ActiveRecord::Base
   after_create :take_screenshot
 
   def take_screenshot
-    conn = Faraday.new(:url => "http://capture.heartrails.com/huge?#{self.url}") do |faraday|
+    conn = Faraday.new(:url => "http://capture.heartrails.com/huge?#{ERB::Util.u(self.url)}") do |faraday|
       faraday.request  :url_encoded
       faraday.adapter  Faraday.default_adapter
     end
